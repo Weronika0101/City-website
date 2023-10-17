@@ -7,22 +7,20 @@
     <title>Miasto Kórnik -Atrakcje</title>
 </head>
 <body>
-    <div id = "container" style="width: 1000;margin-left: auto; margin-right: auto;">
+    <div id = "container" style="width: 1000px;margin-left: auto; margin-right: auto;">
         <div id="logo" style="text-align: center;">
             <header>
-                <h1 > <img src="Zamek.jpg" alt="Zamek Kórnik" width="80" height="60"/> Atrakcje</h1>
+                <h1 > <img src="Zamek.jpg" alt="Zamek Kórnik" width="80" height="60"> Atrakcje</h1>
             </header>
         </div>
 
         <div id = "navigation" style="text-align: center;">
             <nav>
-                <ul style="list-style: none;">
-                    <div id = "nav-bar" style="display: inline-block;margin-right: 40px;">
-                        <li style="display: inline-block;margin-right: 40px;"><a href="index.html">Strona Główna</a></li>
-                        <li style="display: inline-block;margin-right: 40px;"><a href="o_miescie.html">O Mieście</a></li>
-                        <li style="display: inline-block;margin-right: 40px;"><a href="atrakcje.html">Atrakcje</a></li>
-                        <li style="display: inline-block;margin-right: 40px;"><a href="kontakt.html">Kontakt</a></li> <!-- Nowa strona "Kontakt" -->
-                    </div>
+                <ul id = "nav-bar" style="list-style: none; display: inline-block;margin-right: 40px;">
+                    <li style="display: inline-block;margin-right: 40px;"><a href="index.html">Strona Główna</a></li>
+                    <li style="display: inline-block;margin-right: 40px;"><a href="o_miescie.html">O Mieście</a></li>
+                    <li style="display: inline-block;margin-right: 40px;"><a href="atrakcje.html">Atrakcje</a></li>
+                    <li style="display: inline-block;margin-right: 40px;"><a href="kontakt.html">Kontakt</a></li> <!-- Nowa strona "Kontakt" -->
                 </ul>
             </nav>
         </div>
@@ -36,21 +34,32 @@
         <section>
             <h2>Lista Atrakcji</h2>
             <ul>
-                <li>Zamek w Kórniku</li>
-                <li>Arboretum</li>
-                <li>Jezioro Kórnickie</li>
+                <li><a href="#zamek">Zamek w Kórniku</a>
+                    <ul>
+                        <li>Adres: Zamkowa 5</li>
+                        <li>Telefon Kontaktowy: 531 990 142</li>
+                    </ul>
+                </li>
+                <li><a href="#arboretum">Arboretum</a>
+                    <ul>
+                        <li>Adres: Zamkowa</li>
+                        <li>Telefon Kontaktowy: 61 817 00 33</li>
+                    </ul>
+                </li>
+                <li><a href="#jezioro">Jezioro Kórnickie</a>
+                </li>
             </ul>
-
+            <a href="some_zip/zdjecia.zip" download>Pobierz zdjęcia atrakcji.</a>
+        </section>
         <section>
             <ol>
-                <li>Zamek w Kórniku</li>
-                
-                <a href="https://www.zamkipolskie.com/korni/korni.html"><img src="Zamek.jpg" alt="Zamek Kórnik" /></a> 
-            </br>
+                <li><div id="zamek">Zamek w Kórniku</div></li>
+                <a href="https://www.zamkipolskie.com/korni/korni.html"><img src="Zamek.jpg" alt="Zamek Kórnik"></a> 
+                <br>
                 Kliknij na obrazek, żeby dowiedzieć się więcej o zamku
-                <li>Arboretum</li>
+                <li><div id="arboretum">Arboretum</div></li>
                 <img src="arboretum.jpg" alt="Arboretum" />
-                <li>Jezioro Kórnickie</li>
+                <li><div id="jezioro">Jezioro Kórnickie</div></li>
                 <img src="jezioro.jpg" alt="Jezioro" />
             </ol>
 
@@ -61,5 +70,6 @@
     <footer>
         &copy; 2023 Moje Miasto
     </footer>
+    </div>
 </body>
 </html>

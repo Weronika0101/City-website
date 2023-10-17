@@ -14,22 +14,20 @@
     </style>
 </head>
 <body>
-    <div id = "container" style="width: 1000;margin-left: auto; margin-right: auto;">
+    <div id = "container" style="width: 1000px;margin-left: auto; margin-right: auto;">
         <div id="logo" style="text-align: center;">
             <header>
-                <h1><img src="Zamek.jpg" alt="Zamek Kórnik" width="80" height="60"/> Kontakt</h1>
+                <h1><img src="Zamek.jpg" alt="Zamek Kórnik" width="80" height="60"> Kontakt</h1>
             </header>
         </div>
 
         <div id = "navigation" style="text-align: center;">
             <nav>
-                <ul style="list-style: none;">
-                    <div id = "nav-bar" style="display: inline-block;margin-right: 40px;">
+                <ul id = "nav-bar" style="list-style: none; display: inline-block;margin-right: 40px;">
                         <li><a href="index.html">Strona Główna</a></li>
                         <li><a href="o_miescie.html">O Mieście</a></li>
                         <li><a href="atrakcje.html">Atrakcje</a></li>
                         <li><a href="kontakt.html">Kontakt</a></li> <!-- Nowa strona "Kontakt" -->
-                    </div>
                 </ul>
             </nav>
         </div>
@@ -52,9 +50,20 @@
         <section>
             <h2>Formularz Kontaktowy</h2>
             <h4>Jeśli masz jakieś pytania, zachęcamy do skontaktowania się z nami przez formularz</h4>
-            <form action="odbiorca.php" method="post">
+            <form action="mail.php" method="post">
+                <fieldset>
+                    <legend>Zaimek:</legend>
+                    <input type="radio" id="opcja1" name="zaimek" value="opcja1">
+                    <label for="opcja1">Pani</label><br>
+                    <input type="radio" id="opcja2" name="zaimek" value="opcja2">
+                    <label for="opcja2">Pan</label><br>
+                    <input type="radio" id="opcja3" name="zaimek" value="opcja3">
+                    <label for="opcja3">Nie chcę podawać</label><br>
+                </fieldset>
+
                 <label for="imie">Imię:</label>
                 <input type="text" id="imie" name="imie" required><br>
+                
                 <label for="nazwisko">Nazwisko:</label>
                 <input type="text" id="nazwisko" name="nazwisko" required><br>
 
@@ -71,20 +80,15 @@
                     <option value="inna">Inna</option>
                 </select><br>
 
+            
                 <fieldset>
-                    <legend>Wybierz opcje:</legend>
-                    <input type="radio" id="opcja1" name="opcja" value="opcja1">
-                    <label for="opcja1">Opcja 1</label><br>
-                    <input type="radio" id="opcja2" name="opcja" value="opcja2">
-                    <label for="opcja2">Opcja 2</label><br>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Wybierz zainteresowania:</legend>
-                    <input type="checkbox" id="zainteresowanie1" name="zainteresowania[]" value="sport">
-                    <label for="zainteresowanie1">Sport</label><br>
-                    <input type="checkbox" id="zainteresowanie2" name="zainteresowania[]" value="muzyka">
-                    <label for="zainteresowanie2">Muzyka</label><br>
+                    <legend>Temat wiadomości:</legend>
+                    <input type="checkbox" id="temat1" name="temat[]" value="zwiedzanie">
+                    <label for="temat1">Zwiedzanie</label><br>
+                    <input type="checkbox" id="temat2" name="temat[]" value="obiekty">
+                    <label for="temat2">Informacja na temat obiektów</label><br>
+                    <input type="checkbox" id="temat3" name="temat[]" value="inne">
+                    <label for="temat3">Inne</label><br>
                 </fieldset>
 
                 <input type="reset" value="Wyczyść">
@@ -96,5 +100,6 @@
     <footer>
         &copy; 2023 Moje Miasto
     </footer>
+    </div>
 </body>
 </html>
