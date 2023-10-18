@@ -11,6 +11,9 @@
             display: inline-block;
             margin-right: 40px;
         }
+        td {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -58,11 +61,10 @@
             <table border="10">
                 <caption>Dane o Kórniku</caption> 
                 <thead>
-                    <th colspan="2">Kórnik</th>
+                    <tr><th colspan="2">Kórnik</th></tr>
                 </thead>
-                <tbody>
                     <tr> 
-                        <td align="center">Miasto w liczbach</td>
+                        <td>Miasto w liczbach</td>
                         <td rowspan="2"><b>
                             (niem. Kurnik lub Kurnick,<br>
                              w latach 1939–1945 Burgstadt)</b>
@@ -82,20 +84,18 @@
                                     </tr> 
                                 </tbody>
                                 <tfoot>
-                                    <th>Zaludnienie</th> 
-                                    <td>1600/km<sup>2</sup></td>
+                                    <tr>
+                                        <th>Zaludnienie</th> 
+                                        <td>1600/km<sup>2</sup></td>
+                                    </tr>
                                 </tfoot> 
                             </table>
                         </td> 
-
                     </tr> 
-                </tbody>
-
             </table>
-            
+
     </section>
     </main>
-
     <footer>
         &copy; 2023 Moje Miasto
     </footer>
