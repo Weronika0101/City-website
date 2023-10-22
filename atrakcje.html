@@ -8,14 +8,15 @@
 </head>
 <body>
     <div id = "container" style="width: 1000px;margin-left: auto; margin-right: auto;">
-        <div id="logo" style="text-align: center;">
-            <header>
-                <h1 > <img src="Zamek.jpg" alt="Zamek Kórnik" width="80" height="60"> Atrakcje</h1>
-            </header>
+        
+        <header style="text-align:center">
+            <h1><img src="Zamek.jpg" alt="Zamek Kórnik" width="80" height="60"> Strona główna</h1>
+        </header>
+
         </div>
 
-        <div id = "navigation" style="text-align: center;">
-            <nav>
+      
+        <nav style="text-align:center">
                 <ul id = "nav-bar" style="list-style: none; display: inline-block;margin-right: 40px;">
                     <li style="display: inline-block;margin-right: 40px;"><a href="index.html">Strona Główna</a></li>
                     <li style="display: inline-block;margin-right: 40px;"><a href="o_miescie.html">O Mieście</a></li>
@@ -23,7 +24,7 @@
                     <li style="display: inline-block;margin-right: 40px;"><a href="kontakt.html">Kontakt</a></li> <!-- Nowa strona "Kontakt" -->
                 </ul>
             </nav>
-        </div>
+
 
     <main>
         <section>
@@ -35,16 +36,22 @@
             <h2>Lista Atrakcji</h2>
             <ul>
                 <li><a href="#zamek">Zamek w Kórniku</a>
-                    <ul>
-                        <li>Adres: Zamkowa 5</li>
-                        <li>Telefon Kontaktowy: 531 990 142</li>
-                    </ul>
+                    <details>
+                        <summary>Informacje</summary>
+                        <ul>
+                            <li>Adres: Zamkowa 5</li>
+                            <li>Telefon Kontaktowy: 531 990 142</li>
+                        </ul>
+                    </details>
                 </li>
                 <li><a href="#arboretum">Arboretum</a>
-                    <ul>
-                        <li>Adres: Zamkowa</li>
-                        <li>Telefon Kontaktowy: 61 817 00 33</li>
-                    </ul>
+                    <details>
+                        <summary>Informacje</summary>
+                        <ul>
+                            <li>Adres: Zamkowa</li>
+                            <li>Telefon Kontaktowy: 61 817 00 33</li>
+                        </ul>
+                    </details>
                 </li>
                 <li><a href="#jezioro">Jezioro Kórnickie</a>
                 </li>
@@ -66,7 +73,16 @@
         </section>
 
     </main>
+    <aside>
+        <h2>Informacje Dodatkowe</h2>
+        <p>Parking przy Zamku - płatny 12 zł/ doba</p>
+        <label for="parking1">Wolne miejsca:</label>
+        <meter id="parking1" min="0" max="100" low="33" high="66" optimum="80" value="80">at 80/100</meter>
+        <p>Parking przy Rynku - bezpłatny</p>
+        <label for="parking2">Wolne miejsca:</label>
+        <meter id="parking2" min="0" max="100" low="33" high="66" optimum="80" value="30">at 30/100</meter>
 
+    </aside>
     <footer>
         &copy; 2023 Moje Miasto
     </footer>
