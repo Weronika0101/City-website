@@ -60,14 +60,49 @@
                     <label for="opcja3">Nie chcę podawać</label><br>
                 </fieldset>
 
-                <label for="imie">Imię:</label>
-                <input type="text" id="imie" name="imie" required><br>
-                
-                <label for="nazwisko">Nazwisko:</label>
-                <input type="text" id="nazwisko" name="nazwisko" required><br>
+                <div>
+                    <label for="imie" class="form-label">Imię:</label>
+                    <input type="text" id="imie" name="imie" class="form-input" autocomplete="given-name" autofocus>
+                    <span class="form-input">np. Jan</span>
+                </div>
 
-                <label for="email">Adres e-mail:</label>
-                <input type="email" id="email" name="email" required><br>
+                <div>
+                    <label for="nazwisko" class="form-label">Nazwisko:</label>
+                    <input type="text" id="nazwisko" name="nazwisko" class="form-input" required autocomplete="family-name">
+                    <span class="form-input">np. Kowalski</span>
+                </div>
+
+                <div>
+                    <label for="miesiac" class="form-label">Miesiąc urodzin:</label>
+                    <input list="miesiace" id="miesiac" name="miesiac" class="form-input" autocomplete="bday-month">
+                    <datalist id="miesiace">
+                        <option value="Styczeń">
+                        <option value="Luty">
+                        <option value="Marzec">
+                        <option value="Kwiecień">
+                        <option value="Maj">
+                        <option value="Czerwiec">
+                        <option value="Lipiec">
+                        <option value="Sierpień">
+                        <option value="Wrzesień">
+                        <option value="Październik">
+                        <option value="Listopad">
+                        <option value="Grudzień">
+                    </datalist>
+                    <span class="form-input">np. Styczeń</span>
+                </div>
+
+                <div>
+                    <label for="email" class="form-label">Adres e-mail:</label>
+                    <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
+                    <span class="form-input">np. jan.kowalski@example.com</span>
+                </div>
+
+                <div>
+                    <label for="telefon" class="form-label">Telefon:</label>
+                    <input type="tel" id="telefon" name="telefon" class="form-input" autocomplete="tel" pattern="[\+][0-9]{2} [0-9]{3}-[0-9]{3}-[0-9]{3}">
+                    <span class="form-input">np. +48 689-345-233</span>
+                </div>
 
                 <label for="wiadomosc">Wiadomość:</label>
                 <textarea id="wiadomosc" name="wiadomosc" rows="4" cols="50" maxlength="200" required></textarea><br>
@@ -78,7 +113,6 @@
                     <option value="uwaga">Uwaga</option>
                     <option value="inna">Inna</option>
                 </select><br>
-
             
                 <fieldset>
                     <legend>Temat wiadomości:</legend>
