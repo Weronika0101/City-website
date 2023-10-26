@@ -116,12 +116,33 @@
             
                 <fieldset>
                     <legend>Temat wiadomości:</legend>
-                    <input type="checkbox" id="temat1" name="temat[]" value="zwiedzanie">
-                    <label for="temat1">Zwiedzanie</label><br>
-                    <input type="checkbox" id="temat2" name="temat[]" value="obiekty">
-                    <label for="temat2">Informacja na temat obiektów</label><br>
-                    <input type="checkbox" id="temat3" name="temat[]" value="inne">
-                    <label for="temat3">Inne</label><br>
+                    <ul>
+                        <li>
+                            <label for="temat1">Zwiedzanie</label><br>
+                            <ul>
+                                <li>
+                                    <input type="checkbox" id="temat1" name="temat[]" value="zwiedzanie">
+                                    <label for="temat1">Zamek</label><br>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="temat1" name="temat[]" value="zwiedzanie">
+                                    <label for="temat1">Arboretum</label><br>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="temat1" name="temat[]" value="zwiedzanie">
+                                    <label for="temat1">Jezioro</label><br>
+                                </li>
+                            </ul>
+                        </li><br>
+                        <li>
+                            <input type="checkbox" id="temat2" name="temat[]" value="obiekty">
+                            <label for="temat2">Informacja na temat obiektów</label><br>
+                        </li><br>
+                        <li>
+                            <input type="checkbox" id="temat3" name="temat[]" value="inne">
+                            <label for="temat3">Inne</label><br>
+                        </li>
+                    </ul>
                 </fieldset>
 
                 <input type="reset" value="Wyczyść">

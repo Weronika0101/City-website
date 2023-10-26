@@ -13,4 +13,3 @@ Jeżeli nie to proszę podać jakie są różnice.
 3. Czy atrybut placeholder można zastosować do wszystkich typów elementów wejściowych? 
 Jeżeli nie, proszę wymienić przynajmniej 3 typy.
       PLaceholder wykorzystywany jest wyłącznie w wejściach tekstowych. Nie zastosujemy go w wejściach o typach np. checkbox, range, coloor.
- 
