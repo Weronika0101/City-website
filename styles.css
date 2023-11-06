@@ -103,7 +103,7 @@ ul#nav-bar>li {
 }
 /* Wielkość tekstu w pikselach */
 .pixels {
-    font-size: 17px;
+    font-size: 28px;
 }
 
 /* Wielkość tekstu w em */
@@ -119,4 +119,132 @@ ul#nav-bar>li {
 /* Wielkość tekstu w procentach */
 .percent {
     font-size: 120%;
+}
+
+h2 {
+    font-weight: bold;
+    font-style: italic;
+    font-variant: small-caps;
+    font-size: 28px;
+    line-height: 1.5;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+p {
+  font-weight: lighter;
+  font-style: normal;
+  font-variant: normal;
+  font-size: 14pt;
+  line-height: 1.2;
+  font-family: Arial, sans-serif;
+  width: 80%;
+}
+
+.simple-border {
+  border-width: 5px;
+  border-style: solid;
+  border-color: #000;
+}
+
+table {
+  width: 80%;
+  border-collapse: separate;
+  align-items: center;
+  text-align: center;
+}
+
+th, td {
+  padding: 4px;
+  border: 2px solid #432e11;
+}
+
+th {
+  background-color: #c08d37;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+@media (max-width: 600px) {
+  footer {
+    background-color: rgb(219, 125, 57);
+  }
+  nav {
+      background-color: rgb(219, 125, 57);
+  }
+}
+
+a:active { /*???*/
+  color: green; 
+}
+
+input:checked { /*???*/
+  border: 1px solid green; 
+}
+ 
+input:disabled { /*???*/
+  background-color: #ccc;
+}
+
+p:empty { /*???*/
+  display: none; 
+}
+
+input:enabled {
+  background-color: lightgreen;
+}
+
+p:first { /*???*/
+  font-weight: bold;
+}
+
+p:first-child { /*???*/
+  font-weight: bold; 
+}
+
+input:focus {
+  border: 2px solid blue;
+}
+
+a:hover { /*???*/
+  color: red; 
+}
+
+p:last-child {
+  font-style: italic; 
+}
+
+p:last-of-type {
+  font-weight: bold;
+}
+
+a:link {
+  color: blue; 
+}
+
+ol:not(.simple-border) { /*???*/
+  font-style: italic;
+}
+
+p:nth-child(odd) {
+  background-color: #d4a43b; 
+}
+
+li:nth-last-child(2) {
+  font-style: italic;
+}
+
+span:only-child { /*???*/
+  color: red;
+}
+
+input:required {
+  border: 3px solid red;
+}
+
+a:visited {
+  color: purple; 
+}
+
+#nav-bar:target { /*???*/
+  background-color: lightblue;
 }
