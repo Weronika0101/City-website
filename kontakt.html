@@ -36,8 +36,14 @@
             <h2>Informacje Kontaktowe</h2>
             <p>Skontaktuj się z nami:</p>
             <address>
-                Email: <a href="mailto:kontakt.kornik@onet.pl"><mark>kontakt@kornik.pl</mark></a><br>
-                Telefon: <mark>123-456-789</mark>
+                <ol>
+                    <li>
+                        Email: <a href="mailto:kontakt.kornik@onet.pl"><mark>kontakt@kornik.pl</mark></a><br>
+                    </li>
+                    <li>
+                        Telefon: <mark>123-456-789</mark>
+                    </li>
+                </ol>
             </address>
         </section>
 
@@ -99,6 +105,10 @@
                     <span class="form-input">np. +48 689-345-233</span>
                 </div>
 
+                <div>
+                    <input type="tel" id="niedostepny" name="niedostepny" class="form-input" placeholder="Niedostepne pole" disabled="true">
+                </div>
+
                 <label for="wiadomosc">Wiadomość:</label>
                 <textarea id="wiadomosc" name="wiadomosc" rows="4" cols="50" maxlength="200" required></textarea><br>
 
@@ -126,6 +136,12 @@
                                 <li>
                                     <input type="checkbox" id="temat1" name="temat[]" value="zwiedzanie">
                                     <label for="temat1">Zamek</label><br>
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox" id="temat1" name="temat[]" value="zwiedzanie">
+                                            <label for="temat1">+ komnaty</label><br>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <input type="checkbox" id="temat1" name="temat[]" value="zwiedzanie">
@@ -136,11 +152,11 @@
                                     <label for="temat1">Jezioro</label><br>
                                 </li>
                             </ul>
-                        </li><br>
+                        </li>
                         <li>
                             <input type="checkbox" id="temat2" name="temat[]" value="obiekty">
                             <label for="temat2">Informacja na temat obiektów</label><br>
-                        </li><br>
+                        </li>
                         <li>
                             <input type="checkbox" id="temat3" name="temat[]" value="inne">
                             <label for="temat3">Inne</label><br>
