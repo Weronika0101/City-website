@@ -71,6 +71,7 @@ td {
     border: 1px solid #ccc;
     padding: 20px;
     margin-top: 20px;
+    margin-bottom: 100px;
 }
 
 #nav-bar {
@@ -94,6 +95,11 @@ td {
     padding: 10px;
     background-color: #f5f5f5;
     border: 1px solid #ccc;
+}
+#adbutton {
+  float: right;
+  clear: both;
+  margin-inline-end: 30px;
 }
 
 p b {
@@ -380,3 +386,9 @@ div:target {
       background-repeat:no-repeat;
       background-position:98% center;
     }  
+
+  
+  #getUserRateButton{
+    float: right;
+    bottom: 10%;
+  }
