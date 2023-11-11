@@ -36,6 +36,8 @@ aside {
 }
 
 nav {
+    display: flex;
+    justify-content: center;
     text-align: center;
     align-items: center;
     position: absolute;
@@ -252,47 +254,57 @@ div:target {
     background-color: gold;
 }
 
-    /* ------------------------CZĘŚĆ-GÓRNA-MENU------------------------ */
+ /* ------------------------CZĘŚĆ-GÓRNA-MENU------------------------ */
 
     /* usunięcie domyślnych właściwości CSS z elementów - ol - oraz - ul */
+
+    
     #menu, #menu ul, #menu ol {
       list-style-type:none;
+      padding:0;
+      margin:0;
     }
 
     /* wygląd głównego elementu - ol */
     #menu {
+      background-color:#FFF;
       font-size:18px;
       height:2em;
       line-height:2em;
-      align-self: center;
       text-align:center;
-      align-items: center;
-      background-color: #ac7878;
-      margin-left: 300;
-      margin-right: 300;
-      width: 611px;
-
     }
 
     /* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
     #menu a {
       display:block;
       text-decoration:none;
+      color:#000;
       padding:0 5px;
-      text-align:center;
-      align-items: center;
-      align-self: center;
     }
 
     /* wygląd elementów - li - wszystkich dzieci elementu - ol */
     #menu > li {
+      float:left;
       width:150px;
+      margin-left:1px;
+      background-color:#a78f8f;
       height:2em;
-      text-align:center;
-      align-items: center;
     }
 
+    /* wygląd elementu - li - pierwszego dziecka elementu - ol */
+    #menu > li:first-child {
+      margin-left:0;
+    }
 
+    /* wygląd elementów - li - wszystkich dzieci elementu - ol - po najechaniu kursorem myszki na element - li */
+    #menu > li:hover {
+      background-color:#EEE;
+    }
+
+    /* wygląd elementu - a - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+    #menu > li:hover > a {
+      color:#09C;
+    }
 
     /* wygląd elementu - ul - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
     #menu > li:hover > ul {
@@ -306,7 +318,23 @@ div:target {
       display:none;
     }
 
+    /* wygląd elementu - li - w części rozwijanej */
+    #menu > li > ul > li {
+      position:relative;
+      background-color:#EEE;
+    }
 
+    /* wygląd elementu - a - w części rozwijanej */
+
+    /* wygląd elementu - li - w części rozwijanej, po najechaniu kursorem myszki na dany element - li */
+    #menu > li > ul > li:hover {
+      background-color:#DDD;
+    }
+
+    /* wygląd elementu - a - w części rozwijanej, po najechaniu kursorem myszki na element - li */
+    #menu > li > ul > li:hover > a {
+      color:#09C;
+    }
 
     /* ------------------------CZĘŚĆ-ROZWIJANA-MENU-POZIOM-2----------------------- */
 
@@ -317,8 +345,6 @@ div:target {
       position:absolute;
       left:100%;
       margin-top:-2em;
-      text-align:center;
-      align-items: center;
     }
 
     /* wygląd głównego elementu - ol - w drugiej części rozwijanej, po najechaniu kursorem myszki na jego rodzica - li */
@@ -326,8 +352,20 @@ div:target {
       display:block;
     }
 
+    /* wygląd elementów - li - w drugiej części rozwijanej */
+    #menu > li > ul > li > ol > li {
+      background-color:#CCC;
+    }
+
+
+
+    /* wygląd elementu - a - w drugiej części rozwijanej, po najechaniu kursorem myszki */
+    #menu > li > ul > li > ol > li > a:hover {
+      color:#09C;
+    }
 
     /* ------------------------WSPÓLNE----------------------- */
+
 
     /* strzałka w prawo */
     #menu .dol {
@@ -341,4 +379,4 @@ div:target {
       background-image:url('https://webkod.pl/images/right.png');
       background-repeat:no-repeat;
       background-position:98% center;
-    }
+    }  
