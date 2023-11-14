@@ -2,17 +2,16 @@ function zad1() {
     const miesiace = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
     const poprawnaOdpowiedz = miesiace[Math.floor(Math.random() * 12)];
     let szanse = 3;
-    while (szanse > 0) {
-        const odpowiedz = prompt('Pozostałe szanse: ' + szanse + '\nWprowadź nazwę miesiąca.');
+    for (i = szanse; i > 0; i--) {
+        const odpowiedz = prompt('Pozostałe szanse: ' + i + '\nWprowadź nazwę miesiąca.');
         if (odpowiedz === poprawnaOdpowiedz) {
             alert('Dobry traf! Poprawna odpowiedź to ' + poprawnaOdpowiedz);
             return;
         } else {
-            if (szanse == 1)
+            if (i == 1)
                 alert('Koniec prób. Poprawna odpowiedź to ' + poprawnaOdpowiedz);
             else
                 alert('Zły strzał, spróbuj ponownie.');
-            szanse--;
         }
     }
 }
@@ -24,19 +23,18 @@ if (przycisk1) {
   
 function zgadywankaLiczby(szanse) {
     const poprawnaOdpowiedz = Math.floor(Math.random() * 100) + 1;
-    while (szanse > 0) {
-        const odpowiedz = parseInt(prompt('Pozostałe szanse: ' + szanse + '\nWprowadź liczbę z zakresu 1-100.'));
+    for (i = szanse; i > 0; i--) {
+        const odpowiedz = parseInt(prompt('Pozostałe szanse: ' + i + '\nWprowadź liczbę z zakresu 1-100.'));
         if (odpowiedz === poprawnaOdpowiedz) {
             alert('Dobry traf! Poprawna odpowiedź to ' + poprawnaOdpowiedz);
             return;
-        } else if (szanse == 1) {
+        } else if (i == 1) {
             alert('Koniec prób. Poprawna odpowiedź to ' + poprawnaOdpowiedz);
         } else if (odpowiedz < poprawnaOdpowiedz) {
             alert('Szukana liczba jest większa. Spróbuj ponownie!');
         } else {
             alert('Szukana liczba jest mniejsza. Spróbuj ponownie!');
         }
-        szanse--;
     }
 }
 
