@@ -59,7 +59,7 @@ if (przycisk3) {
     przycisk3.addEventListener("click", zad3);
 }
   
-function sumaLiczb() {
+function zad4() {
     let suma = 0;
     const N = prompt('Wprowadź N.');
     for (let i = 0; i < N; i++) {
@@ -71,5 +71,5 @@ function sumaLiczb() {
 
 var przycisk4 = document.getElementById("zad4");
 if (przycisk4) {
-    przycisk4.addEventListener("click", sumaLiczb);
+    przycisk4.addEventListener("click", zad4);
 }
