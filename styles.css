@@ -173,31 +173,31 @@ th {
   }
 }
 
-input:active {
-  color: rgb(212, 18, 18);
+/* a:active { 
+  color: green; 
 }
 
-input:checked {
-  outline: 3px solid rgb(107, 0, 128); 
+input:checked { 
+  border: 1px solid green; 
 }
  
-input:disabled {
+input:disabled { 
   background-color: #ccc;
 }
 
-textarea:empty {
-  background-color: #bb9090;
-}
+p:empty { 
+  display: none; 
+} */
 
 input:enabled {
   background-color: lightgreen;
 }
 
-@page:first {
-    margin-left: 10%;
+/* p:first { 
+  font-weight: bold;
 }
 
-li:first-child {
+p:first-child { 
   font-weight: bold; 
 }
 
@@ -205,48 +205,46 @@ input:focus {
   border: 2px solid blue;
 }
 
-input:hover {
-  background-color: #c1ddc3;
+a:hover { 
+  color: red; 
 }
 
-li:last-child {
-  border: 2px solid #bb9090;
+p:last-child {
+  font-style: italic; 
 }
 
 p:last-of-type {
   font-weight: bold;
-}
+} */
 
 a:link {
   color: blue; 
 }
 
-ol:not(.simple-border) {
-    border-width: 5px;
-    border-style: solid;
-    border-color: pink;
-}
-
-li:nth-child(even) {
+/* ol:not(.simple-border) { 
   font-style: italic;
 }
 
-li:nth-last-child(2) {
-    border: 2px solid #a06b6b;
+p:nth-child(odd) {
+  background-color: #d4a43b; 
 }
 
-li:only-child {
-    border: 2px solid #810202;
+li:nth-last-child(2) {
+  font-style: italic;
+}
+
+span:only-child { 
+  color: red;
 }
 
 input:required {
   border: 3px solid red;
-}
+} */
 
 a:visited {
   color: purple; 
 }
 
-div:target {
-    background-color: gold;
+#nav-bar:target { /*???*/
+  background-color: lightblue;
 }
