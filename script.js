@@ -66,3 +66,24 @@ var getUserCalculateNumber = document.getElementById("getUserCalcButton");
 if (getUserCalculateNumber) {
     getUserCalculateNumber.addEventListener("click", calculateSum);
 }
+
+window.addEventListener("click", addEmoji);
+
+var emojiCreated = 0
+
+function addEmoji() {
+    wasWindowClicked = false
+    emojiCreated += 1
+    emoji = ""
+    switch (emojiCreated % 3) {
+        case 0:
+            emoji = ":) ";
+            break;
+        case 1:
+            emoji = ":D ";
+            break;
+        default:
+            emoji ="B) "
+    }
+    document.getElementById("empty_space").innerHTML += emoji;
+}
