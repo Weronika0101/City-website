@@ -87,3 +87,7 @@ function addEmoji() {
     }
     document.getElementById("empty_space").innerHTML += emoji;
 }
+
+
+
+

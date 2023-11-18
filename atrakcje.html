@@ -7,6 +7,9 @@
     <title>Miasto Kórnik -Atrakcje</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="script.js" defer></script>
+    <script src="zad1.js" defer></script>
+    <script src="zad2.js" defer></script>
+    <script src="zad3.js" defer></script>
 </head>
 <body>
     <div id = "container">
@@ -45,6 +48,33 @@
             <h2>Witamy na naszej stronie!</h2>
             <p>Tutaj znajdziesz informacje o naszym pięknym mieście oraz jego atrakcjach turystycznych.</p>
         </section>
+            <div>
+                <label for="backgroundColorSelect">Kolor tła:</label>
+                <select id="backgroundColorSelect">
+                    <option value="#ffffff">Biały</option>
+                    <option value="#f0f0f0">Szary</option>
+                    <option value="#a6e6e6">Niebieski</option>
+                </select>
+        
+                <label for="textColorSelect">Kolor tekstu:</label>
+                <select id="textColorSelect">
+                    <option value="#000000">Czarny</option>
+                    <option value="#333333">Ciemnoszary</option>
+                    <option value="#666666">Jasnoszary</option>
+                </select>
+        
+                <label for="fontTypeSelect">Czcionka:</label>
+                <select id="fontTypeSelect">
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Tahoma">Tahoma</option>
+                </select>
+        
+                <button id="changeStylesButton">Change Styles</button>
+            </div>
+                <!-- Existing ordered list and container for parent node information -->
+    <ol id="numberedList"></ol>
+    <div id="parentNodeInfo"></div>
 
         <section>
             <h2>Lista Atrakcji</h2>
@@ -82,7 +112,6 @@
                 <li><div id="jezioro">Jezioro Kórnickie <br><img src="jezioro.jpg" alt="Jezioro" ></div></li>
                 
             </ol>
-
         </section>
         </div>
     </main>
