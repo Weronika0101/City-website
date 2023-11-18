@@ -38,20 +38,23 @@ document.addEventListener("DOMContentLoaded", function() {
     var lastItem = list.lastElementChild;
     list.removeChild(lastItem);
 
+    var myList = document.getElementById("numberedList");
+    var parentNodeInfoContainer = document.getElementById("parentNodeInfo");
 
     for (var i = 1; i <= 5; i++) {
-        var listItem = document.createElement("li");
+      var listItem = document.createElement("li");
         listItem.appendChild(document.createTextNode("Element " + i));
 
-        // Insert the new list item into the existing list
+        // dodaj element do listy
         myList.appendChild(listItem);
 
-        // Access the parent node of the new list item and display it on the webpage
+        // wysiwtl parent node elementów listy
         var parentNode = listItem.parentNode;
         var infoText = "Parent Node of Element " + i + ": " + parentNode.nodeName;
-        
+
         var infoElement = document.createElement("p");
         infoElement.textContent = infoText;
+
         parentNodeInfoContainer.appendChild(infoElement);
     }
 });
