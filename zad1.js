@@ -1,5 +1,4 @@
 
-//lista js 2
 document.addEventListener("DOMContentLoaded", function() {
 
     var list = document.getElementById("menu");
