@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
     newItem.appendChild(textNode);
     list.appendChild(newItem);
 
-    // Create a new numbered list and append it to the section
-    var numberedList = document.createElement("ol");
-    numberedList.setAttribute("id", "numberedList");
+  
+   // var numberedList = document.createElement("ol");
+    //numberedList.setAttribute("id", "numberedList");
 
     // for (var i = 1; i <= 5; i++) {
     //     var listItem = document.createElement("li");
@@ -57,3 +57,38 @@ document.addEventListener("DOMContentLoaded", function() {
         parentNodeInfoContainer.appendChild(infoElement);
     }
 });
+
+
+var addButton = document.getElementById("addButton");
+addButton.addEventListener("click", add);
+
+var replaceButton = document.getElementById("replaceButton");
+replaceButton.addEventListener("click", replace);
+
+var deleteButton = document.getElementById("deleteButton");
+deleteButton.addEventListener("click", deleteEl);
+
+function add() {
+
+  var textfield = document.getElementById("text");
+  var idfield = document.getElementById("index");
+
+  var numberedList = document.createElement("ol");
+    numberedList.setAttribute("id", "numberedList");
+
+        var listItem = document.createElement("li");
+        listItem.appendChild(document.createTextNode(idfield + textfield));
+        numberedList.appendChild(listItem);
+
+
+    document.getElementById("content").appendChild(numberedList);
+
+}
+
+function replace() {
+
+}
+
+function deleteEl() {
+
+}
