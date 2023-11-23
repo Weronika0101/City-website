@@ -15,11 +15,13 @@ function handleMouseDown(event) {
 
 function handleMouseOver(event) {
   'use strict';
+  document.body.style.backgroundColor = "blue";
   displayEventInfo(event);
 }
 
 function handleMouseOut(event) {
   'use strict';
+  document.body.style.backgroundColor = "red";
   displayEventInfo(event);
 }
 

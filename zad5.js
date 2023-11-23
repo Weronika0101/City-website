@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
   
-    // Zdarzenia focus i blur do wyświetlania tekstów pomocy
     const formInputs = document.querySelectorAll('.form-input');
   
     formInputs.forEach(function (input) {
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
       input.addEventListener('blur', hideHelpText);
     });
   
-    // Zdarzenia submit i reset do wyzwalania okien potwierdzających
     const form = document.querySelector('form');
     form.addEventListener('submit', handleSubmit);
     form.addEventListener('reset', handleReset);
@@ -33,22 +31,16 @@ document.addEventListener('DOMContentLoaded', function () {
   
   function handleSubmit(event) {
     'use strict';
-    event.preventDefault(); // Zapobiegaj domyślnemu zachowaniu formularza
+    event.preventDefault();
     const confirmation = confirm('Czy na pewno chcesz wysłać formularz?');
-    if (confirmation) {
-      // Tutaj możesz dodać kod obsługi wysłania formularza
+    if (confirmation)
       alert('Formularz został wysłany!');
-    }
   }
   
   function handleReset(event) {
     'use strict';
     const confirmation = confirm('Czy na pewno chcesz wyczyścić formularz?');
-    if (confirmation) {
-      // Tutaj możesz dodać kod obsługi resetowania formularza
+    if (confirmation)
       alert('Formularz został wyczyszczony!');
-    } else {
-      event.preventDefault(); // Zapobiegaj domyślnemu zachowaniu resetu
-    }
   }
   
