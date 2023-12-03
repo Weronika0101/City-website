@@ -69,10 +69,13 @@ var deleteButton = document.getElementById("deleteButton");
 deleteButton.addEventListener("click", deleteEl);
 
 var numberedList = document.createElement("ol");
+var list;
 
 function add() {
 
   var textfield = document.getElementById("text").value;
+  var idfield = document.getElementById("index").value;
+
 
     numberedList.setAttribute("id", "numberedList");
 
@@ -85,8 +88,14 @@ function add() {
 
 function replace() {
 
+  var listItem = numberedList.children;
+
+  numberedList.replaceChild(listItem[2],document.createTextNode("eee"))
 }
 
 function deleteEl() {
+
+  var listItem = numberedList.lastElementChild;
+  numberedList.removeChild(listItem);
 
 }
