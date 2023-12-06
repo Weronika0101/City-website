@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = array();
     $fieldsToValidate = array(
         array("imie", 2, 50),
-        array("nazwisko", 2, 50)
+        array("nazwisko", 2, 50),
         array("wiadomosc", 1, 200)
     );
 
