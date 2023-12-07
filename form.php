@@ -1,7 +1,5 @@
 <?php
-// Sprawdzenie, czy formularz został wysłany
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Funkcja walidująca dane tekstowe
     function validateText($input, $fieldName, $minLength, $maxLength) {
         $input = trim($input);
 
@@ -12,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         return "";
     }
 
-    // Funkcja walidująca adres e-mail
     function validateEmail($email) {
         $email = trim($email);
 
@@ -23,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         return "";
     }
 
-    // Funkcja walidująca numer telefonu
     function validatePhone($phone) {
         $phone = trim($phone);
 
@@ -34,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         return "";
     }
 
-    // Pobranie danych z formularza
     $zaimek = $_POST["zaimek"];
     $imie = $_POST["imie"];
     $nazwisko = $_POST["nazwisko"];
@@ -45,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kategoria = $_POST["kategoria"];
     $tematy = $_POST["temat"];
 
-    // Walidacja danych
     $errors = array();
     $fieldsToValidate = array(
         array("imie", 2, 50),
@@ -61,15 +55,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[$fieldName] = validateText($input, $fieldName, $minLength, $maxLength);
     }
 
-    // $errors["imie"] = validateText($imie, "Imię", 2, 50);
-    // $errors["nazwisko"] = validateText($nazwisko, "Nazwisko", 2, 50);
     $errors["email"] = validateEmail($email);
     $errors["telefon"] = validatePhone($telefon);
-    // $errors["wiadomosc"] = validateText($wiadomosc, "Wiadomość", 1, 200);
     $errors["kategoria"] = empty($kategoria) ? "Proszę wybrać kategorię." : "";
     $errors["tematy"] = empty($tematy) ? "Proszę wybrać przynajmniej jeden temat." : "";
 
-    // Wyświetlanie ewentualnych błędów
     foreach ($errors as $error) {
         if (!empty($error)) {
             die($error);
@@ -79,7 +69,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Jeśli dane są poprawne, można wykonywać dalsze operacje
     // ...
 
-    // Przykładowa odpowiedź
     echo "Dane zostały poprawnie przetworzone!";
 }
 ?>
