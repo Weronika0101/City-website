@@ -1,93 +1,34 @@
+document.addEventListener("DOMContentLoaded", function () {
+    // Funkcja do zmiany stylów
+    function changeStyles() {
+        var backgroundColor = document.getElementById("backgroundColorSelect").value;
+        var textColor = document.getElementById("textColorSelect").value;
+        var fontType = document.getElementById("fontTypeSelect").value;
 
-//ocenianie strony
-function ocenStrone() {
-    var ocena = window.prompt("Oceń tę stronę w skali od 1 do 5:");
+        document.body.style.backgroundColor = backgroundColor;
+        document.body.style.color = textColor;
+        document.body.style.fontFamily = fontType;
 
-    if (ocena === null) {
-        window.alert("Ocena anulowana");
-        return;
+        // Zapisz preferencje w ciasteczku na 1 minutę
+        setCookie("backgroundColor", backgroundColor, 1 / (24 * 60)); // 1 minutę przeliczoną na dni
+        setCookie("textColor", textColor, 1 / (24 * 60));
+        setCookie("fontType", fontType, 1 / (24 * 60));
     }
 
-    ocena = parseInt(ocena);
+    // Obsługa przycisku zmiany stylów
+    var changeStylesButton = document.getElementById("changeStylesButton");
+    changeStylesButton.addEventListener("click", function () {
+        changeStyles();
+    });
 
-    if (!isNaN(ocena) && ocena >= 1 && ocena <= 5) {
-        alert("Dziękujemy za ocenę: " + ocena);
-    } else {
-        alert("Wprowadź poprawną ocenę od 1 do 5!");
+    // Funkcja do ustawiania ciasteczek
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
     }
-}
-
-var getUserRateButton = document.getElementById("getUserRateButton");
-if (getUserRateButton) {
-    getUserRateButton.addEventListener("click", ocenStrone);
-}
-
-//ukrywanie reklam
-function hideAds() {
-    var ad = document.getElementById("hideAds");
-    if (ad) {
-        ad.innerHTML = " ";
-    }
-}
-
-var getUserHideButton = document.getElementById("adbutton");
-if (getUserHideButton) {
-    getUserHideButton.addEventListener("click", hideAds);
-}
-
-//konkurs losowanie
-function generateRandomNumber() {
-    var randomNumber = Math.floor(Math.random() * 100) + 1;
-    document.writeln("Gratulacje, wylosowałeś liczbę: " + randomNumber);
-}
-
-var getUserLotteryNumber = document.getElementById("getUserLotteryButton");
-if (getUserLotteryNumber) {
-    getUserLotteryNumber.addEventListener("click", generateRandomNumber);
-}
-
-
-//kalkulator
-function calculateSum() {
-    // Przykład użycia zmiennych globalnych
-    num1 = parseFloat(prompt('Podaj pierwszą liczbę:'));
-    num2 = parseFloat(prompt('Podaj drugą liczbę:'));
-
-
-    if (!isNaN(num1) && !isNaN(num2)) {
-        var sum = num1 + num2;
-        alert('Suma wynosi: ' + sum);
-    } else {
-        alert('Wprowadź poprawne liczby!');
-    }
-}
-
-var getUserCalculateNumber = document.getElementById("getUserCalcButton");
-if (getUserCalculateNumber) {
-    getUserCalculateNumber.addEventListener("click", calculateSum);
-}
-
-window.addEventListener("click", addEmoji);
-
-var emojiCreated = 0
-
-function addEmoji() {
-    wasWindowClicked = false
-    emojiCreated += 1
-    emoji = ""
-    switch (emojiCreated % 3) {
-        case 0:
-            emoji = ":) ";
-            break;
-        case 1:
-            emoji = ":D ";
-            break;
-        default:
-            emoji ="B) "
-    }
-    document.getElementById("empty_space").innerHTML += emoji;
-}
-
-
-
-
+});
