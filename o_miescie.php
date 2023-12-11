@@ -1,4 +1,5 @@
 <?php
+
 // Funkcja do odczytywania ciasteczek
 function getCookie($name) {
     return isset($_COOKIE[$name]) ? $_COOKIE[$name] : null;
@@ -8,6 +9,25 @@ function getCookie($name) {
 $backgroundColor = getCookie("backgroundColor");
 $textColor = getCookie("textColor");
 $fontType = getCookie("fontType");
+
+// $session_lifetime = 2 * 60;
+// // Ustaw opcje sesji
+// ini_set('session.cookie_lifetime', $session_lifetime);
+$session_lifetime = 2 * 60;
+
+// Ustaw opcje sesji
+ini_set('session.cookie_lifetime', $session_lifetime);
+ini_set('session.gc_maxlifetime', $session_lifetime);
+session_start();
+
+// Sprawdź, czy użytkownik jest zalogowany
+if (!isset($_SESSION['user'])) {
+    header('Location: login.php'); // Przekieruj na stronę logowania
+    exit();
+}
+
+// Reszta kodu strony "o_miescie.php"...
+
 ?>
 <!DOCTYPE html>
 <html lang="pl">

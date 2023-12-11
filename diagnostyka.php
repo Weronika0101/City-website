@@ -30,8 +30,15 @@
     } else {
         echo '<p>Brak ciastka o nazwie "fontType"</p>';
     }
+
+     // Sprawdź czy użytkownik jest zalogowany
+     session_start();
+     if (isset($_SESSION['user'])) {
+         echo '<p>Zalogowany użytkownik: ' . htmlspecialchars($_SESSION['user']) . '</p>';
+         echo '<p><a href="logout.php">Wyloguj</a></p>';
+     }
     ?>
 
-    <p><a href="index.html">Wróć do strony głównej</a></p>
+    <p><a href="index.php">Wróć do strony głównej</a></p>
 </body>
 </html>
