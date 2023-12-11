@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   
     const form = document.querySelector('form');
-    form.addEventListener('submit', handleSubmit);
+    //form.addEventListener('submit', handleSubmit);
     form.addEventListener('reset', handleReset);
   });
   
@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
   
-  function handleSubmit(event) {
-    'use strict';
-    event.preventDefault();
-    const confirmation = confirm('Czy na pewno chcesz wysłać formularz?');
-    if (confirmation)
-      alert('Formularz został wysłany!');
-  }
+  // function handleSubmit(event) {
+  //   'use strict';
+  //   event.preventDefault();
+  //   const confirmation = confirm('Czy na pewno chcesz wysłać formularz?');
+  //   if (confirmation)
+  //     alert('Formularz został wysłany!');
+  // }
   
   function handleReset(event) {
     'use strict';
