@@ -1,10 +1,10 @@
 <?php
-// Funkcja do odczytywania ciasteczek
+
 function getCookie($name) {
     return isset($_COOKIE[$name]) ? $_COOKIE[$name] : null;
 }
 
-// Odczytaj preferencje z ciasteczek
+
 $backgroundColor = getCookie("backgroundColor");
 $textColor = getCookie("textColor");
 $fontType = getCookie("fontType");
@@ -23,7 +23,7 @@ $fontType = getCookie("fontType");
     <script src="zad3.js" defer></script> -->
     <script src="script.js" defer></script>
     <style>
-        /* Dodaj style na podstawie preferencji z ciasteczek */
+
         body {
             background-color: <?php echo $backgroundColor ? $backgroundColor : '#ffffff'; ?>;
             color: <?php echo $textColor ? $textColor : '#000000'; ?>;
