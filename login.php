@@ -12,21 +12,32 @@ if (isset($_SESSION['user'])) {
     exit();
 }
 
-// Dane do uwierzytelniania (login i hasło)
-$logins = array('user1', 'user2','admin');
-$passwords = array('password1', 'password2','admin');
+// Połączenie z bazą danych (Uzupełnij dane dostępowe do bazy)
+$host = 'localhost';
+$dbname = 'web';
+$user = 'root';
+$pass = '';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error: " . $e->getMessage());
+}
 
 // Sprawdź, czy przesłano dane logowania
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login = isset($_POST['login']) ? $_POST['login'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    // Sprawdź poprawność danych
-    $isValidLogin = in_array($login, $logins);
-    $isValidPassword = in_array($password, $passwords);
+    // Przygotuj zapytanie SQL
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE login = ?");
+    $stmt->execute([$login]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($isValidLogin && $isValidPassword) {
-        $_SESSION['user'] = $login; // Zapisz użytkownika w sesji
+    // Sprawdź poprawność danych
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user'] = $user['login']; // Zapisz użytkownika w sesji
         header('Location: o_miescie.php'); // Przekieruj na stronę po zalogowaniu
         exit();
     } else {
@@ -34,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>

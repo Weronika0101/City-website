@@ -52,7 +52,8 @@ $fontType = getCookie("fontType");
                         <li><a href="#">Rynek</a></li>
                     </ul>
                 </li>
-                    <li><a href="kontakt.php">Kontakt</a></li> <!-- Nowa strona "Kontakt" -->
+                    <li><a href="kontakt.php">Kontakt</a></li>
+                    <li><a href="register.php">Moje konto</a></li>  
                 </ol>
             </nav>
 

@@ -1,26 +1,27 @@
 <?php
 
-// Funkcja do odczytywania ciasteczek
+
 function getCookie($name) {
     return isset($_COOKIE[$name]) ? $_COOKIE[$name] : null;
 }
 
-// Odczytaj preferencje z ciasteczek
+
 $backgroundColor = getCookie("backgroundColor");
 $textColor = getCookie("textColor");
 $fontType = getCookie("fontType");
 
 // $session_lifetime = 2 * 60;
-// // Ustaw opcje sesji
-// ini_set('session.cookie_lifetime', $session_lifetime);
-$session_lifetime = 2 * 60;
 
-// Ustaw opcje sesji
+// ini_set('session.cookie_lifetime', $session_lifetime);
+$session_lifetime = 20;
+
+
 ini_set('session.cookie_lifetime', $session_lifetime);
 ini_set('session.gc_maxlifetime', $session_lifetime);
 session_start();
 
-// Sprawdź, czy użytkownik jest zalogowany
+
+
 if (!isset($_SESSION['user'])) {
     header('Location: login.php'); // Przekieruj na stronę logowania
     exit();
@@ -71,7 +72,8 @@ if (!isset($_SESSION['user'])) {
                     <li><a href="#">Rynek</a></li>
                 </ul>
             </li>
-                <li><a href="kontakt.php">Kontakt</a></li> <!-- Nowa strona "Kontakt" -->
+                <li><a href="kontakt.php">Kontakt</a></li>
+                <li><a href="register.php">Moje konto</a></li> 
             </ol>
         </nav>
     <main>
