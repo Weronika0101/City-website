@@ -10,11 +10,12 @@
 <body>
     <h1>Zmiana danych użytkownika</h1>
 
-    <?php if (isset($modificationSuccess)): ?>
+    <?php session_start();
+    if (isset($modificationSuccess)): ?>
         <p style="color: green;"><?php echo $modificationSuccess; ?></p>
     <?php endif; ?>
 
-    <form method="post">
+    <form method="post" action="register-form.php">
         <label for="first_name">Nowe imię:</label>
         <input type="text" id="first_name" name="first_name"  required>
         <br>
