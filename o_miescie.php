@@ -86,6 +86,10 @@ if (!isset($_SESSION['user'])) {
             <button id="adbutton">Ukryj reklamy</button>
         <section>
             <h2 id = "welcome" class="pixels">Witamy na naszej stronie!</h2>
+            
+            <?php if (isset($_SESSION['user']) && is_array($_SESSION['user']) && isset($_SESSION['user']['login'])): ?>
+    <p id="welcome-user">Witaj użytkowniku, <?php echo $_SESSION['user']['login']; ?>!</p>
+<?php endif; ?>
             <p>Tutaj znajdziesz informacje o naszym pięknym mieście oraz jego atrakcjach turystycznych.</p>
         </section>
         <section>

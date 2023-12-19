@@ -35,14 +35,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$login]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Sprawdź poprawność danych
     if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user'] = $user['login']; // Zapisz użytkownika w sesji
-        header('Location: o_miescie.php'); // Przekieruj na stronę po zalogowaniu
-        exit();
-    } else {
-        $loginError = 'Błędny login lub hasło.';
-    }
+    $_SESSION['user'] = $user; // Zapisz cały rekord użytkownika w sesji
+    header('Location: o_miescie.php'); // Przekieruj na stronę po zalogowaniu
+    exit();
+} else {
+    $loginError = 'Błędny login lub hasło.';
+}
+
+    // // Sprawdź poprawność danych
+    // if ($user && password_verify($password, $user['password'])) {
+    //     $_SESSION['user'] = $user['login']; // Zapisz użytkownika w sesji
+    //     header('Location: o_miescie.php'); // Przekieruj na stronę po zalogowaniu
+    //     exit();
+    // } else {
+    //     $loginError = 'Błędny login lub hasło.';
+    // }
 }
 ?>
 

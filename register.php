@@ -28,9 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
 
     // Sprawdź, czy użytkownik jest zalogowany
     session_start();
-    if (isset($_SESSION['login'])) {
+    if (isset($_SESSION['user'])) {
         // Aktualizuj dane użytkownika w bazie
-        $userId = $_SESSION['login']; // Zaktualizuj na rzeczywiste pole identyfikatora
+        $userId = $_SESSION['user']['id']; // Zaktualizuj na rzeczywiste pole identyfikatora
         $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
         $stmt = $pdo->prepare("UPDATE users SET login=?, password=?, first_name=?, last_name=? WHERE id=?");
         $stmt->execute([$newLogin, $hashedPassword, $newFirstName, $newLastName, $userId]);
