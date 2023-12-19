@@ -63,6 +63,7 @@ $fontType = getCookie("fontType");
             <section>
                 <article>
                   <h2>Witamy na naszej stronie!</h2>
+                  
             <button id="getUserRateButton">Oceń stronę</button>
 
                   <p>Tutaj znajdziesz informacje o naszym pięknym mieście oraz jego atrakcjach turystycznych.</p>
