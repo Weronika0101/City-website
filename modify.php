@@ -24,5 +24,8 @@
         <br>
         <button type="submit" name="modify_data">Zapisz zmiany</button>
     </form>
+    <form method="post" action="logout.php">
+        <button type="submit" name="modify_data">Wyloguj się</button>
+    </form>
 </body>
 </html>

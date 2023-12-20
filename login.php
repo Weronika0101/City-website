@@ -11,47 +11,6 @@ if (isset($_SESSION['user'])) {
     header('Location: o_miescie.php'); // Przekieruj na stronę po zalogowaniu
     exit();
 }
-
-// Połączenie z bazą danych (Uzupełnij dane dostępowe do bazy)
-$host = 'localhost';
-$dbname = 'web';
-$user = 'root';
-$pass = '';
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Error: " . $e->getMessage());
-}
-
-// Sprawdź, czy przesłano dane logowania
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $login = isset($_POST['login']) ? $_POST['login'] : '';
-    $password = isset($_POST['password']) ? $_POST['password'] : '';
-
-    // Przygotuj zapytanie SQL
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE login = ?");
-    $stmt->execute([$login]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($user && password_verify($password, $user['password'])) {
-    $_SESSION['user'] = $user; // Zapisz cały rekord użytkownika w sesji
-    header('Location: o_miescie.php'); // Przekieruj na stronę po zalogowaniu
-    exit();
-} else {
-    $loginError = 'Błędny login lub hasło.';
-}
-
-    // // Sprawdź poprawność danych
-    // if ($user && password_verify($password, $user['password'])) {
-    //     $_SESSION['user'] = $user['login']; // Zapisz użytkownika w sesji
-    //     header('Location: o_miescie.php'); // Przekieruj na stronę po zalogowaniu
-    //     exit();
-    // } else {
-    //     $loginError = 'Błędny login lub hasło.';
-    // }
-}
 ?>
 
 <!DOCTYPE html>
@@ -68,8 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php if (isset($loginError)): ?>
         <p style="color: red;"><?php echo $loginError; ?></p>
     <?php endif; ?>
-
-    <form method="post">
+    <?php if (isset($_POST['login_communicate'])): ?>
+        <p style="color: green;"><?php echo $_POST['login_communicate'];?></p>
+    <?php endif; ?>
+    <form method="post" action="login_verification.php">
         <label for="login">Login:</label>
         <input type="text" id="login" name="login" required>
         <br>
